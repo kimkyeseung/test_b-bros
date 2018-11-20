@@ -1,14 +1,36 @@
 import { connect } from 'react-redux';
+import { GET_ITEMS } from '../constants/actionTypes';
+import axios from 'axios';
+import cors from 'cors';
 import App from '../components/App';
+
+const actions = {
+  getItems(items) {
+    return {
+      type: GET_ITEMS,
+      items
+    };
+  }
+};
 
 const mapStateToProps = state => {
   return {
-    
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    getItems() {
+      axios.get('https://api.ddocdoc.com/v2/eventBanner?populate=true')
+        .then(({ data }) => {
+          console.log(data, data.items);
+          actions.getItems(data.items);
+        })
+        .catch(err => {
+          console.log('is has problem');
+          throw new Error(err);
+        });
+    }
   };
 };
 
