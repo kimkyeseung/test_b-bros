@@ -5,7 +5,7 @@ import cors from 'cors';
 import App from '../components/App';
 import SAMPLE_DATA from '../sampleData';
 
-const actions = {
+export const actions = {
   getItems(items) {
     return {
       type: GET_ITEMS,
@@ -25,11 +25,10 @@ const mapDispatchToProps = dispatch => {
     getItems() {
       axios.get('https://api.ddocdoc.com/v2/eventBanner?populate=true')
         .then(({ data }) => {
-          console.log(data, data.items);
           dispatch(actions.getItems(data.items));
         })
         .catch(err => {
-          console.error('is has problem');
+          console.error('It has problem');
           dispatch(actions.getItems(SAMPLE_DATA.items));
           // throw new Error(err);
         });

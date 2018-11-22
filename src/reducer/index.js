@@ -13,7 +13,7 @@ const clone = obj => {
   return copy;
 }
 
-const defaultState = {
+export const defaultState = {
   items: []
 };
 
