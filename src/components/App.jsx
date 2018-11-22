@@ -4,8 +4,8 @@ import Header from './Header';
 import Footer from './Footer';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.handleScrollUp = this.handleScrollUp.bind(this);
   }
 
@@ -15,12 +15,12 @@ class App extends Component {
 
   handleScrollUp() {
     window.scroll(0, 0);
-}
+  }
 
   render() {
     return (
       <div>
-        <Header></Header>
+        <Header />
         <div className={styles.itemsWrap}>
           <ul className={styles.items}>
             {
@@ -45,7 +45,7 @@ class App extends Component {
         }}>
           <i className={styles.scrollUpIcon}>TOP</i>
         </aside>
-        <Footer></Footer>
+        <Footer />
       </div>
     );
   }

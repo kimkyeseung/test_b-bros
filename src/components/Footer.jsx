@@ -7,7 +7,7 @@ class Footer extends Component {
     return (
       <footer>
         <div className={styles.footerWrap}>
-          <Link to="https://www.ddocdoc.com">
+          <Link to="/">
             <h2>똑닥</h2>
           </Link>
           <ul className={styles.footerLinks}>
