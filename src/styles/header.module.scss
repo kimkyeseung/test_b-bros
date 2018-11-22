@@ -60,7 +60,8 @@ header {
       .headerGnbItem {
         font-size: 16px;
         display: inline-block;
-        height: 41px;
+        position: relative;
+        height: 34px;
         color: #666;
         text-align: center;
         margin-left: -5px;
@@ -83,11 +84,26 @@ header {
           display: block;
           width: 16px;
           height: 16px;
+          position: absolute;
+          top: 0;
+          left: 50%;
           margin-top: 4px;
-          margin-right: -10px;
+          margin-left: -40px;
           background: url('../asset/sprite.png');
           background-position: -310px -459px;
           background-size: 657px 556px;
+        }
+        &:after {
+          content: " ";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-left: -2px;
+          margin-top: 4px;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: red;
         }
       }
     }
