@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/header.module.scss';
 
 class Header extends Component {
@@ -7,10 +8,22 @@ class Header extends Component {
       <header>
         <div className={styles.headerWrap}>
           <div className={styles.header}>
-            <h1>똑닥</h1>
+            <Link to="/">
+              <div>
+                <h1>똑닥</h1>
+              </div>
+            </Link>
             <div className={styles.headerUtil}>
-              <a href="#" className={`${styles.headerSearch} ${styles.iconBtn}`}>search</a>
-              <a href="#" className={`${styles.headerBookmark} ${styles.iconBtn}`}>bookmark</a>
+              <Link to="/search" style={{float: 'left'}}>
+                <div className={styles.headerSearch}>
+                  <i className={styles.iconBtn}>search</i>
+                </div>
+              </Link>
+              <Link to="/bookmark" style={{float: 'left'}}>
+                <div className={styles.headerBookmark}>
+                  <i className={styles.iconBtn}>bookmark</i>
+                </div>
+              </Link>
             </div>
           </div>
           <ul className={styles.headerGnb}>

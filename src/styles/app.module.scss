@@ -1,0 +1,39 @@
+@import '../index.module.scss';
+
+.itemsWrap {
+  width: 100%;
+  .items {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    .item {
+      img {
+        display: block;
+        width: 100%;
+      }
+      .itemContext {
+        background: white;
+        padding: 11px 16px 9px;
+        margin-bottom: 8px;
+        h2 {
+          font-size: 14px;
+          font-weight: 700;
+          color: #212529
+        }
+        p {
+          font-size: 12px;
+          color: #666;
+          margin-bottom: 7px;
+          strong {
+            color: #f56a6b;
+            font-style: normal;
+            font-weight: 400;
+          }
+          b {
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
+}

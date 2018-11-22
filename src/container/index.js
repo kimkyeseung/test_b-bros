@@ -3,6 +3,7 @@ import { GET_ITEMS } from '../constants/actionTypes';
 import axios from 'axios';
 import cors from 'cors';
 import App from '../components/App';
+import SAMPLE_DATA from '../sampleData';
 
 const actions = {
   getItems(items) {
@@ -15,6 +16,7 @@ const actions = {
 
 const mapStateToProps = state => {
   return {
+    items: state.items
   };
 };
 
@@ -24,11 +26,12 @@ const mapDispatchToProps = dispatch => {
       axios.get('https://api.ddocdoc.com/v2/eventBanner?populate=true')
         .then(({ data }) => {
           console.log(data, data.items);
-          actions.getItems(data.items);
+          dispatch(actions.getItems(data.items));
         })
         .catch(err => {
-          console.log('is has problem');
-          throw new Error(err);
+          console.error('is has problem');
+          dispatch(actions.getItems(SAMPLE_DATA.items));
+          // throw new Error(err);
         });
     }
   };

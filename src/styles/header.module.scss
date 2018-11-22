@@ -9,56 +9,82 @@ header {
     margin: 0 auto;
     .header {
       position: relative;
-      h1 {
-        width: 58px;
-        height: 21px;
-        text-indent: -9999px;
-        background: url('../asset/sprite.png');
-        background-position: -45px -458px;
-        background-size: 658px 556px;
+      div {
+        padding: 12px 0 0 16px;
+        float: left;
+          h1 {
+            width: 58px;
+            height: 21px;
+            text-indent: -9999px;
+            background: url('../asset/sprite.png');
+            background-position: -45px -458px;
+            background-size: 658px 556px;
+          }
       }
       .headerUtil {
-        position: absolute;
-        right: 0;
-        top: 0;
-        .iconBtn {
-          text-indent: -9999px;
-          display: block;
-          float: left;
-          background: url('../asset/sprite.png');
-          background-size: 658px 556px;
-        }
-        .headerSearch {
-          width: 19px;
-          height: 19px;
-          background-position: -150px -459px;
-        }
-        .headerBookmark {
-          width: 22px;
-          height: 19px;
-          background-position: -104px -459px;
+        float: right;
+        padding: 0;
+        div {
+          box-sizing: border-box;
+          &.headerSearch {
+            width: 40px;
+            padding-top: 15px;
+            padding-left: 9px;
+            .iconBtn {
+              width: 19px;
+              height: 19px;
+              background-position: -150px -459px;
+            }
+          }
+          &.headerBookmark {
+            padding: 15px 41px 0 9px;
+            width: 40px;
+            .iconBtn {
+              width: 22px;
+              height: 19px;
+              background-position: -104px -459px;
+            }
+          }
+          .iconBtn {
+            text-indent: -9999px;
+            display: block;
+            background: url('../asset/sprite.png');
+            background-size: 658px 556px;
+          }
         }
       }
     }
     .headerGnb {
+      clear: both;
+      padding-top: 14px;
       .headerGnbItem {
-        font-size: 20px;
+        font-size: 16px;
         display: inline-block;
+        height: 41px;
+        color: #666;
+        text-align: center;
+        margin-left: -5px;
         @for $i from 1 through 5 {
           &:first-child:nth-last-child(#{$i}),
           &:first-child:nth-last-child(#{$i}) ~ li {
             width: 100% / $i;
           }
         }
+        &:first-child {
+          text-indent: -10px;
+        }
       }
       .selected {
         color: red;
+        margin-left: 20px;
         &:before {
           content: " ";
           float: left;
           display: block;
           width: 16px;
           height: 16px;
+          margin-top: 4px;
+          margin-right: -10px;
           background: url('../asset/sprite.png');
           background-position: -310px -459px;
           background-size: 657px 556px;
