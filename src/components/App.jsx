@@ -4,10 +4,18 @@ import Header from './Header';
 import Footer from './Footer';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.handleScrollUp = this.handleScrollUp.bind(this);
+  }
 
   componentDidMount() {
     this.props.getItems();
   }
+
+  handleScrollUp() {
+    window.scroll(0, 0);
+}
 
   render() {
     return (
@@ -32,6 +40,11 @@ class App extends Component {
             }
           </ul>
         </div>
+        <aside className={styles.scrollUp} onClick={() => {
+          this.handleScrollUp();
+        }}>
+          <i className={styles.scrollUpIcon}>TOP</i>
+        </aside>
         <Footer></Footer>
       </div>
     );
