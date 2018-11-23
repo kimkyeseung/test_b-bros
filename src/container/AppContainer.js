@@ -1,7 +1,5 @@
 import { connect } from 'react-redux';
 import { GET_ITEMS } from '../constants/actionTypes';
-import axios from 'axios';
-import cors from 'cors';
 import App from '../components/App';
 import SAMPLE_DATA from '../sampleData';
 
@@ -23,15 +21,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getItems() {
-      axios.get('https://api.ddocdoc.com/v2/eventBanner?populate=true')
-        .then(({ data }) => {
-          dispatch(actions.getItems(data.items));
-        })
-        .catch(err => {
-          console.error('It has problem');
-          dispatch(actions.getItems(SAMPLE_DATA.items));
-          // throw new Error(err);
-        });
+      setTimeout(() => {
+        dispatch(actions.getItems(SAMPLE_DATA.items));
+      }, 0);
     }
   };
 };

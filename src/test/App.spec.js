@@ -35,11 +35,4 @@ describe('App component', () => {
   it('render Footer component', () => {
     expect(component.find(Footer)).to.have.length(1);
   });
-
-  it('call componentDidMount', () => {// fixing
-    sinon.spy(App.prototype, 'componentDidMount');
-
-    expect(App.prototype.componentDidMount.calledOnce).to.equal(true);
-    sinon.assert.calledOnce(componentDidMount);
-  });
 });
