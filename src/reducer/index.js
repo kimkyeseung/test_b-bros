@@ -11,7 +11,7 @@ const clone = obj => {
     }
   }
   return copy;
-}
+};
 
 export const defaultState = {
   items: []
@@ -28,6 +28,6 @@ const reducer = (state = defaultState, action) => {
       return state;
     }
   }
-}
+};
 
 export default reducer

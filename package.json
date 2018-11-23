@@ -1,11 +1,12 @@
 {
   "name": "test_b-bros",
+  "author": "Kim Kyeseung",
+  "email": "kimkyeseung@gmail.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
     "cors": "^2.8.5",
-    "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
@@ -36,6 +37,7 @@
     "enzyme-adapter-react-16": "^1.7.0",
     "jsdom": "^13.0.0",
     "mocha": "^5.2.0",
+    "node-sass": "^4.10.0",
     "sinon": "^7.1.1"
   }
 }
