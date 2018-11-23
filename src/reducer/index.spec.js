@@ -1,6 +1,6 @@
 import deepFreeze from 'deep-freeze';
 import reducer from './index';
-import { actions } from '../container';
+import { actions } from '../container/AppContainer';
 import { defaultState } from './index';
 
 describe('reducer', () => {

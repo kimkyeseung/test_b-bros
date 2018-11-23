@@ -17,13 +17,6 @@ describe('App component', () => {
     />
   );
 
-  const mountedComponent = mount(
-    <App
-      items={items}
-      getItems={getItems}
-    />
-  );
-
   it('getItems is function', () => {
     expect(typeof getItems).to.equal('function');
   });
